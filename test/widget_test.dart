@@ -14,7 +14,7 @@ import 'package:teste_api_login/app/aratu_module.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(ModularApp(module: AratuModule(), child: const AratuApp()));
+    await tester.pumpWidget(ModularApp(module: AratuModule(), child: AratuApp()));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

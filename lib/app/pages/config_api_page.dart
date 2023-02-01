@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:teste_api_login/app/stores/api_store.dart';
+import 'package:teste_api_login/app/stores/app_store.dart';
 
 class ConfigApiPage extends StatefulWidget {
   const ConfigApiPage({Key? key}) : super(key: key);
@@ -35,7 +35,7 @@ class _ConfigApiPageState extends State<ConfigApiPage> {
     }
     final ip = _enderecoIP.text;
     final porta = _porta.text;
-    final store = context.read<ApiStore>();
+    final store = context.read<AppStore>();
     store.save(ip, porta);
   }
 

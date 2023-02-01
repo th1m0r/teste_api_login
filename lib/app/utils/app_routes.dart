@@ -1,8 +1,9 @@
 class AppRoutes {
   AppRoutes._();
 
+  static const String splashPage = "/";
   static const String inicialPage = "/inicial-page";
   static const String configApi = "/config-api";
   static const String login = "/login";
-  static const String dashboard = "/";
+  static const String dashboard = "/dashboard";
 }

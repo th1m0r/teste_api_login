@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:teste_api_login/app/stores/login_store.dart';
+import 'package:teste_api_login/app/stores/app_store.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);
@@ -10,12 +10,10 @@ class DashboardPage extends StatefulWidget {
 }
 
 class _DashboardPageState extends State<DashboardPage> {
-
   @override
   Widget build(BuildContext context) {
-    final store = context.read<LoginStore>();
-    print('LoginStore: ${store.hashCode}');
-    final usuario = store.user;
+    final store = context.watch<AppStore>();
+    final usuario = store.usuario;
     return Scaffold(
       appBar: AppBar(
         title: const Text("Aratu mobile"),
@@ -36,7 +34,11 @@ class _DashboardPageState extends State<DashboardPage> {
             automaticallyImplyLeading: false,
           ),
           const Divider(),
-          const Text("Sair"),
+          TextButton(
+              onPressed: () {
+                store.remove();
+              },
+              child: const Text("Sair")),
         ],
       )),
       body: Padding(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:teste_api_login/app/stores/login_store.dart';
+import 'package:teste_api_login/app/stores/app_store.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
     }
     final username = _username.text;
     final password = _password.text;
-    final store = context.read<LoginStore>();
+    final store = context.read<AppStore>();
     store.login(username, password);
   }
 

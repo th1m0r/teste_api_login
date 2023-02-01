@@ -4,5 +4,5 @@ import 'package:teste_api_login/app/aratu_app.dart';
 import 'package:teste_api_login/app/aratu_module.dart';
 
 Future<void> main() async {
-  runApp(ModularApp(module: AratuModule(), child: const AratuApp()));
+  runApp(ModularApp(module: AratuModule(), child: AratuApp()));
 }
